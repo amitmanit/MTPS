@@ -10,9 +10,12 @@ const Gallery = require('../models/Gallery');
 // ---- HOME PAGE ----
 router.get('/', async (req, res) => {
   try {
-    // Fetch latest 5 notices and 6 gallery images for the homepage
-    const notices = await Notice.find().sort({ date: -1 }).limit(5);
-    const galleryImages = await Gallery.find().sort({ date: -1 }).limit(6);
+    // Fetch latest 5 notices and 6 gallery images in parallel
+    const [notices, galleryImages] = await Promise.all([
+      Notice.find().sort({ date: -1 }).limit(5),
+      Gallery.find().sort({ date: -1 }).limit(6)
+    ]);
+
     res.render('index', {
       title: 'Mother Teresa Public School - Home',
       page: 'home',
