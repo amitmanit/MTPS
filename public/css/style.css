@@ -1637,3 +1637,95 @@ body {
     padding: 6px 12px;
   }
 }
+
+/* ============================================================
+   RESPONSIVE OVERRIDES & FIXES
+   ============================================================ */
+
+@media (max-width: 991px) {
+  .navbar-custom .nav-link {
+    padding: 12px 20px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  
+  .navbar-custom .nav-link.active::after {
+    display: none;
+  }
+  
+  .navbar-collapse {
+    background: var(--primary-dark);
+    margin: 0 -12px;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+  
+  .top-bar .d-flex .mx-3 {
+    display: none;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    gap: 8px !important;
+  }
+
+  .brand-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .brand-text .main-title {
+    font-size: 1.1rem;
+    line-height: 1.1;
+  }
+
+  .brand-text .main-title .title-primary {
+    display: block;
+    color: var(--secondary);
+  }
+
+  .brand-text .main-title .title-sec {
+    display: block; 
+    font-size: 0.95rem;
+    color: var(--white);
+    opacity: 0.9;
+  }
+
+  .brand-text .sub-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .brand-text .main-title {
+    font-size: 1rem;
+  }
+  
+  .top-bar {
+    font-size: 0.75rem;
+  }
+}
