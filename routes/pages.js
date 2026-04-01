@@ -6,25 +6,37 @@ const express = require('express');
 const router = express.Router();
 const Notice = require('../models/Notice');
 const Gallery = require('../models/Gallery');
+const cache = require('../config/cache');
+
+// Cache TTL constants (in seconds)
+const TTL_HOME    = 300;  // 5 min  — home page notices + gallery preview
+const TTL_NOTICES = 180;  // 3 min  — notice board (updated more often)
+const TTL_GALLERY = 600;  // 10 min — gallery images (rarely change)
 
 // ---- HOME PAGE ----
 router.get('/', async (req, res) => {
   try {
-    // Fetch latest 5 notices and 6 gallery images in parallel
-    // .lean() returns plain JS objects (2-3x faster than full Mongoose docs)
-    // .select() only fetches needed fields to reduce DB payload
-    const [notices, galleryImages] = await Promise.all([
-      Notice.find()
-        .sort({ date: -1 })
-        .limit(5)
-        .select('title content important date')
-        .lean(),
-      Gallery.find()
-        .sort({ date: -1 })
-        .limit(6)
-        .select('title imageUrl category')
-        .lean()
-    ]);
+    // Try to serve from cache first
+    let notices = cache.get('home:notices');
+    let galleryImages = cache.get('home:gallery');
+
+    if (!notices || !galleryImages) {
+      // Cache miss — fetch from DB in parallel
+      [notices, galleryImages] = await Promise.all([
+        Notice.find()
+          .sort({ date: -1 })
+          .limit(5)
+          .select('title content important date')
+          .lean(),
+        Gallery.find()
+          .sort({ date: -1 })
+          .limit(6)
+          .select('title imageUrl category')
+          .lean()
+      ]);
+      cache.set('home:notices', notices, TTL_HOME);
+      cache.set('home:gallery', galleryImages, TTL_HOME);
+    }
 
     res.render('index', {
       title: 'Mother Teresa Public School - Home',
@@ -89,18 +101,19 @@ router.get('/facilities', (req, res) => {
 router.get('/gallery', async (req, res) => {
   try {
     const category = req.query.category || 'All';
-    let galleryImages;
-    if (category === 'All') {
-      galleryImages = await Gallery.find()
+    const cacheKey = `gallery:${category}`;
+
+    let galleryImages = cache.get(cacheKey);
+    if (!galleryImages) {
+      // Cache miss — fetch from DB
+      const filter = category === 'All' ? {} : { category };
+      galleryImages = await Gallery.find(filter)
         .sort({ date: -1 })
         .select('title imageUrl category description')
         .lean();
-    } else {
-      galleryImages = await Gallery.find({ category })
-        .sort({ date: -1 })
-        .select('title imageUrl category description')
-        .lean();
+      cache.set(cacheKey, galleryImages, TTL_GALLERY);
     }
+
     res.render('gallery', {
       title: 'Gallery - Mother Teresa Public School',
       page: 'gallery',
@@ -121,10 +134,14 @@ router.get('/gallery', async (req, res) => {
 // ---- NOTICE BOARD ----
 router.get('/notices', async (req, res) => {
   try {
-    const notices = await Notice.find()
-      .sort({ date: -1 })
-      .select('title content important date')
-      .lean();
+    let notices = cache.get('notices:all');
+    if (!notices) {
+      notices = await Notice.find()
+        .sort({ date: -1 })
+        .select('title content important date')
+        .lean();
+      cache.set('notices:all', notices, TTL_NOTICES);
+    }
     res.render('notices', {
       title: 'Notice Board - Mother Teresa Public School',
       page: 'notices',

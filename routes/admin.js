@@ -12,6 +12,7 @@ const Gallery = require('../models/Gallery');
 const Admission = require('../models/Admission');
 const Contact = require('../models/Contact');
 const { isLoggedIn } = require('../middleware/auth');
+const cache = require('../config/cache');
 
 // ---- Multer Config for Gallery Uploads ----
 const storage = multer.diskStorage({
@@ -158,6 +159,9 @@ router.post('/notices', isLoggedIn, async (req, res) => {
       content,
       important: important === 'on'
     });
+    // Invalidate notice cache so new data is visible immediately
+    cache.del('notices:all');
+    cache.del('home:notices');
     res.redirect('/admin/notices');
   } catch (err) {
     console.error(err);
@@ -192,6 +196,8 @@ router.post('/notices/edit/:id', isLoggedIn, async (req, res) => {
       content,
       important: important === 'on'
     });
+    cache.del('notices:all');
+    cache.del('home:notices');
     res.redirect('/admin/notices');
   } catch (err) {
     console.error(err);
@@ -203,6 +209,8 @@ router.post('/notices/edit/:id', isLoggedIn, async (req, res) => {
 router.get('/notices/delete/:id', isLoggedIn, async (req, res) => {
   try {
     await Notice.findByIdAndDelete(req.params.id);
+    cache.del('notices:all');
+    cache.del('home:notices');
     res.redirect('/admin/notices');
   } catch (err) {
     console.error(err);
@@ -243,6 +251,10 @@ router.post('/gallery', isLoggedIn, upload.single('image'), async (req, res) => 
     }
 
     await Gallery.create({ title, imageUrl, category, description });
+    // Invalidate gallery cache so new image appears immediately
+    cache.del('gallery:All');
+    cache.del(`gallery:${category}`);
+    cache.del('home:gallery');
     res.redirect('/admin/gallery');
   } catch (err) {
     console.error(err);
@@ -254,6 +266,7 @@ router.post('/gallery', isLoggedIn, upload.single('image'), async (req, res) => 
 router.get('/gallery/delete/:id', isLoggedIn, async (req, res) => {
   try {
     await Gallery.findByIdAndDelete(req.params.id);
+    cache.flush(); // flush all gallery cache keys
     res.redirect('/admin/gallery');
   } catch (err) {
     console.error(err);
