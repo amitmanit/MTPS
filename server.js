@@ -19,7 +19,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ---- Connect to MongoDB ----
-connectDB();
+const clientPromise = connectDB();
 
 // ---- Middleware ----
 
@@ -40,7 +40,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
-    mongoUrl: process.env.MONGO_URI,
+    clientPromise: clientPromise,
     collectionName: 'sessions'
   }),
   cookie: {
