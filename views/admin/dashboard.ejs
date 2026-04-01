@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Admin Sidebar -->
+  <div class="admin-sidebar">
+    <div class="sidebar-brand">
+      <i class="fas fa-school me-2"></i> MTPS Admin
+    </div>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="/admin/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/notices"><i class="fas fa-bullhorn"></i> Notices</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/gallery"><i class="fas fa-images"></i> Gallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/admissions"><i class="fas fa-user-graduate"></i> Admissions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/messages"><i class="fas fa-envelope"></i> Messages</a>
+      </li>
+      <li class="nav-item mt-3" style="border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">
+        <a class="nav-link" href="/"><i class="fas fa-globe"></i> View Website</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/logout" style="color:var(--accent) !important;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Admin Content -->
+  <div class="admin-content">
+    <div class="admin-header">
+      <div>
+        <h3 style="font-family:var(--font-heading); margin-bottom:3px;">Dashboard</h3>
+        <p class="text-muted mb-0" style="font-size:0.88rem;">Welcome back, <strong><%= adminUsername %></strong>!</p>
+      </div>
+      <div class="text-muted" style="font-size:0.85rem;">
+        <i class="fas fa-calendar-alt me-1"></i> <%= new Date().toLocaleDateString('en-IN', { weekday:'long', day:'numeric', month:'long', year:'numeric' }) %>
+      </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="stat-card">
+          <div class="stat-number"><%= stats.noticeCount %></div>
+          <div class="stat-label"><i class="fas fa-bullhorn me-1"></i> Total Notices</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="stat-card orange">
+          <div class="stat-number"><%= stats.galleryCount %></div>
+          <div class="stat-label"><i class="fas fa-images me-1"></i> Gallery Photos</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="stat-card green">
+          <div class="stat-number"><%= stats.admissionCount %></div>
+          <div class="stat-label"><i class="fas fa-user-graduate me-1"></i> Admission Forms</div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="stat-card red">
+          <div class="stat-number"><%= stats.contactCount %></div>
+          <div class="stat-label"><i class="fas fa-envelope me-1"></i> Unread Messages</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="row g-4">
+      <!-- Recent Admissions -->
+      <div class="col-lg-7">
+        <div class="admin-table">
+          <div class="p-3 d-flex justify-content-between align-items-center" style="border-bottom:1px solid var(--light-gray);">
+            <h5 class="mb-0" style="font-family:var(--font-heading); font-size:1.05rem;">
+              <i class="fas fa-user-graduate me-2" style="color:var(--primary);"></i>Recent Admissions
+            </h5>
+            <a href="/admin/admissions" style="font-size:0.85rem;">View All <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Class</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if (recentAdmissions.length > 0) { %>
+                  <% recentAdmissions.forEach(a => { %>
+                    <tr>
+                      <td><%= a.studentName %></td>
+                      <td><%= a.classApplied %></td>
+                      <td><%= a.createdAt.toLocaleDateString('en-IN', {day:'numeric',month:'short'}) %></td>
+                      <td>
+                        <span class="status-badge <%= a.status.toLowerCase() %>"><%= a.status %></span>
+                      </td>
+                    </tr>
+                  <% }) %>
+                <% } else { %>
+                  <tr><td colspan="4" class="text-center text-muted py-3">No admissions yet</td></tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Notices -->
+      <div class="col-lg-5">
+        <div class="admin-table">
+          <div class="p-3 d-flex justify-content-between align-items-center" style="border-bottom:1px solid var(--light-gray);">
+            <h5 class="mb-0" style="font-family:var(--font-heading); font-size:1.05rem;">
+              <i class="fas fa-bullhorn me-2" style="color:var(--primary);"></i>Recent Notices
+            </h5>
+            <a href="/admin/notices" style="font-size:0.85rem;">View All <i class="fas fa-arrow-right ms-1"></i></a>
+          </div>
+          <div class="p-3">
+            <% if (recentNotices.length > 0) { %>
+              <% recentNotices.forEach(n => { %>
+                <div class="d-flex justify-content-between align-items-center mb-3 pb-2" style="border-bottom:1px solid var(--light-gray);">
+                  <div>
+                    <h6 class="mb-0" style="font-size:0.88rem;"><%= n.title %></h6>
+                    <small class="text-muted"><%= n.date.toLocaleDateString('en-IN', {day:'numeric',month:'short',year:'numeric'}) %></small>
+                  </div>
+                  <% if (n.important) { %>
+                    <span class="notice-badge" style="font-size:0.65rem;">!</span>
+                  <% } %>
+                </div>
+              <% }) %>
+            <% } else { %>
+              <p class="text-center text-muted py-3 mb-0">No notices yet</p>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

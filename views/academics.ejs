@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the academic programs, curriculum, and teaching methodology at Mother Teresa Public School, Mahnar.">
+  <title><%= title %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <section class="page-header">
+    <div class="container">
+      <h1><i class="fas fa-book-open me-3"></i>Academics</h1>
+      <p>Comprehensive curriculum for holistic student development</p>
+      <div class="breadcrumb-custom">
+        <a href="/">Home</a> <span>/</span> <span>Academics</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes Offered -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Classes We Offer</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">From nursery to class 10, we provide age-appropriate learning</p>
+      
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="curriculum-card">
+            <div class="curriculum-icon"><i class="fas fa-baby"></i></div>
+            <h5>Pre-Primary (Nursery - UKG)</h5>
+            <p class="text-muted">Play-based learning with focus on motor skills, language development, creativity, and social interaction through fun activities.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="curriculum-card">
+            <div class="curriculum-icon" style="background:linear-gradient(135deg, var(--secondary), var(--secondary-light)); color:var(--primary-dark);"><i class="fas fa-child"></i></div>
+            <h5>Primary (Class 1 - 5)</h5>
+            <p class="text-muted">Building strong foundations in core subjects — English, Hindi, Mathematics, Environmental Science, and General Knowledge.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="curriculum-card">
+            <div class="curriculum-icon" style="background:linear-gradient(135deg, var(--success), #2ed573);"><i class="fas fa-user-graduate"></i></div>
+            <h5>Middle & Secondary (Class 6 - 10)</h5>
+            <p class="text-muted">Advanced curriculum with Science, Mathematics, Social Studies, English, Hindi, Computer Science, and specialized electives.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum Details -->
+  <section class="section section-gray">
+    <div class="container">
+      <h2 class="section-title">Our Curriculum</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">A well-structured academic program aligned with modern standards</p>
+      
+      <div class="row g-4">
+        <div class="col-lg-6 animate-on-scroll">
+          <div class="custom-card h-100">
+            <div class="card-body p-4">
+              <h4 style="font-family:var(--font-heading); color:var(--primary);">
+                <i class="fas fa-book me-2" style="color:var(--secondary);"></i>Core Subjects
+              </h4>
+              <div class="row mt-3">
+                <div class="col-6">
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>English</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Hindi</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Mathematics</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Science</li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Social Studies</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Computer Science</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>General Knowledge</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Moral Science</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 animate-on-scroll">
+          <div class="custom-card h-100">
+            <div class="card-body p-4">
+              <h4 style="font-family:var(--font-heading); color:var(--primary);">
+                <i class="fas fa-palette me-2" style="color:var(--secondary);"></i>Co-Curricular Activities
+              </h4>
+              <div class="row mt-3">
+                <div class="col-6">
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Drawing & Painting</li>
+                    <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Music & Dance</li>
+                    <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Sports & Games</li>
+                    <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Yoga & Meditation</li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Debate & Quiz</li>
+                    <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Science Projects</li>
+                    <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Drama & Theater</li>
+                    <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Environmental Club</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching Methodology -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Our Teaching Methodology</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Modern approaches for effective and engaging learning</p>
+
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6 animate-on-scroll">
+          <div class="custom-card text-center">
+            <div class="card-body">
+              <div class="card-icon mx-auto"><i class="fas fa-chalkboard"></i></div>
+              <h6>Interactive Teaching</h6>
+              <p class="text-muted mb-0" style="font-size:0.88rem;">Smart boards and multimedia presentations make learning engaging and interactive.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 animate-on-scroll">
+          <div class="custom-card text-center">
+            <div class="card-body">
+              <div class="card-icon yellow mx-auto"><i class="fas fa-flask"></i></div>
+              <h6>Hands-On Learning</h6>
+              <p class="text-muted mb-0" style="font-size:0.88rem;">Practical experiments, projects, and activities to reinforce theoretical concepts.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 animate-on-scroll">
+          <div class="custom-card text-center">
+            <div class="card-body">
+              <div class="card-icon green mx-auto"><i class="fas fa-users-cog"></i></div>
+              <h6>Group Activities</h6>
+              <p class="text-muted mb-0" style="font-size:0.88rem;">Collaborative projects and group discussions develop teamwork and communication skills.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 animate-on-scroll">
+          <div class="custom-card text-center">
+            <div class="card-body">
+              <div class="card-icon red mx-auto"><i class="fas fa-chart-line"></i></div>
+              <h6>Regular Assessment</h6>
+              <p class="text-muted mb-0" style="font-size:0.88rem;">Continuous evaluation through tests, assignments, and projects to track progress.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exam Pattern -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="custom-card animate-on-scroll">
+            <div class="card-body p-4">
+              <h4 style="font-family:var(--font-heading); color:var(--primary);"><i class="fas fa-clipboard-check me-2"></i>Examination Pattern</h4>
+              <p class="text-muted">Our assessment system is designed to evaluate students comprehensively:</p>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead style="background:var(--primary); color:white;">
+                    <tr>
+                      <th>Assessment</th>
+                      <th>Frequency</th>
+                      <th>Weightage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Unit Tests</td><td>Monthly</td><td>10%</td></tr>
+                    <tr><td>Periodic Assessment</td><td>Quarterly</td><td>20%</td></tr>
+                    <tr><td>Half-Yearly Exam</td><td>October</td><td>30%</td></tr>
+                    <tr><td>Annual Examination</td><td>March</td><td>40%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="mb-0 mt-3 text-muted" style="font-size:0.88rem;">
+                <i class="fas fa-info-circle me-2" style="color:var(--primary);"></i>
+                Co-curricular activities, attendance, and behavior are also considered in the overall assessment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

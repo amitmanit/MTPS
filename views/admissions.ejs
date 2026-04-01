@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Apply for admission at Mother Teresa Public School, Mahnar. Online admission form, eligibility criteria, and important dates.">
+  <title>
+    <%= title %>
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+    <section class="page-header">
+      <div class="container">
+        <h1><i class="fas fa-graduation-cap me-3"></i>Admissions</h1>
+        <p>Begin your child's journey with quality education</p>
+        <div class="breadcrumb-custom">
+          <a href="/">Home</a> <span>/</span> <span>Admissions</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admission Info -->
+    <section class="section">
+      <div class="container">
+        <div class="row g-4 mb-5">
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="custom-card text-center">
+              <div class="card-body">
+                <div class="card-icon mx-auto"><i class="fas fa-calendar-check"></i></div>
+                <h5>Admission Period</h5>
+                <p class="text-muted mb-0">Admissions are open throughout the academic year subject to seat
+                  availability. Early applications are recommended.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="custom-card text-center">
+              <div class="card-body">
+                <div class="card-icon yellow mx-auto"><i class="fas fa-clipboard-list"></i></div>
+                <h5>Eligibility Criteria</h5>
+                <p class="text-muted mb-0">Age-appropriate admission as per class norms. Previous academic records and
+                  transfer certificate required for higher classes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="custom-card text-center">
+              <div class="card-body">
+                <div class="card-icon green mx-auto"><i class="fas fa-file-alt"></i></div>
+                <h5>Required Documents</h5>
+                <p class="text-muted mb-0"> Aadhar card, previous report card, transfer certificate, passport-size
+                  photographs, and address proof.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Classes Info -->
+        <div class="row mb-5">
+          <div class="col-lg-8 mx-auto">
+            <div class="custom-card animate-on-scroll">
+              <div class="card-body p-4">
+                <h4 style="font-family:var(--font-heading); color:var(--primary);"><i
+                    class="fas fa-school me-2"></i>Classes Available</h4>
+                <div class="table-responsive mt-3">
+                  <table class="table table-hover">
+                    <thead style="background:var(--primary); color:var(--white);">
+                      <tr>
+                        <th>Class</th>
+                        <th>Age Group</th>
+                        <th>Sections</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Nursery</td>
+                        <td>3 - 4 years</td>
+                        <td>A, B</td>
+                      </tr>
+                      <tr>
+                        <td>LKG</td>
+                        <td>4 - 5 years</td>
+                        <td>A, B</td>
+                      </tr>
+                      <tr>
+                        <td>UKG</td>
+                        <td>5 - 6 years</td>
+                        <td>A, B</td>
+                      </tr>
+                      <tr>
+                        <td>Class 1 - 5</td>
+                        <td>6 - 11 years</td>
+                        <td>A, B</td>
+                      </tr>
+                      <tr>
+                        <td>Class 6 - 8</td>
+                        <td>11 - 14 years</td>
+                        <td>A, B</td>
+                      </tr>
+                      <tr>
+                        <td>Class 9 - 10</td>
+                        <td>14 - 16 years</td>
+                        <td>A</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Success/Error Messages -->
+        <% if (success==='true' ) { %>
+          <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            <i class="fas fa-check-circle me-2"></i>
+            <strong>Application Submitted Successfully!</strong> We will contact you soon regarding the admission
+            process.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+          <% } else if (success==='false' ) { %>
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+              <i class="fas fa-exclamation-circle me-2"></i>
+              <strong>Submission Failed.</strong> Please fill all required fields and try again.
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            <% } %>
+
+              <!-- Admission Form -->
+              <h2 class="section-title">Online Admission Form</h2>
+              <div class="section-divider"></div>
+              <p class="section-subtitle">Fill in the details below to apply for admission</p>
+
+              <div class="row">
+                <div class="col-lg-10 mx-auto">
+                  <div class="form-section animate-on-scroll">
+                    <form action="/api/admission" method="POST" class="needs-validation" novalidate id="admissionForm">
+                      <h5 class="mb-4" style="color:var(--primary); font-family:var(--font-heading);">
+                        <i class="fas fa-user-graduate me-2"></i>Student Information
+                      </h5>
+                      <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                          <label class="form-label">Student Full Name <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" name="studentName" required
+                            placeholder="Enter student's full name">
+                        </div>
+                        <div class="col-md-3">
+                          <label class="form-label">Date of Birth <span class="text-danger">*</span></label>
+                          <input type="date" class="form-control" name="dateOfBirth" required>
+                        </div>
+                        <div class="col-md-3">
+                          <label class="form-label">Gender <span class="text-danger">*</span></label>
+                          <select class="form-select" name="gender" required>
+                            <option value="">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
+                        <div class="col-md-4">
+                          <label class="form-label">Class Applied For <span class="text-danger">*</span></label>
+                          <select class="form-select" name="classApplied" required>
+                            <option value="">Select Class</option>
+                            <option value="Nursery">Nursery</option>
+                            <option value="LKG">LKG</option>
+                            <option value="UKG">UKG</option>
+                            <option value="Class 1">Class 1</option>
+                            <option value="Class 2">Class 2</option>
+                            <option value="Class 3">Class 3</option>
+                            <option value="Class 4">Class 4</option>
+                            <option value="Class 5">Class 5</option>
+                            <option value="Class 6">Class 6</option>
+                            <option value="Class 7">Class 7</option>
+                            <option value="Class 8">Class 8</option>
+                            <option value="Class 9">Class 9</option>
+                            <option value="Class 10">Class 10</option>
+                          </select>
+                        </div>
+                        <div class="col-md-8">
+                          <label class="form-label">Previous School (if any)</label>
+                          <input type="text" class="form-control" name="previousSchool"
+                            placeholder="Enter previous school name">
+                        </div>
+                      </div>
+
+                      <h5 class="mb-4" style="color:var(--primary); font-family:var(--font-heading);">
+                        <i class="fas fa-users me-2"></i>Parent / Guardian Information
+                      </h5>
+                      <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                          <label class="form-label">Father's Name <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" name="fatherName" required
+                            placeholder="Enter father's full name">
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label">Mother's Name <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" name="motherName" required
+                            placeholder="Enter mother's full name">
+                        </div>
+                        <div class="col-md-4">
+                          <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                          <input type="tel" class="form-control" name="phone" required placeholder="+91 XXXXX XXXXX"
+                            pattern="[0-9+\s-]{10,15}">
+                        </div>
+                        <div class="col-md-4">
+                          <label class="form-label">Email Address</label>
+                          <input type="email" class="form-control" name="email" placeholder="parent@email.com">
+                        </div>
+                      </div>
+
+                      <h5 class="mb-4" style="color:var(--primary); font-family:var(--font-heading);">
+                        <i class="fas fa-map-marker-alt me-2"></i>Address
+                      </h5>
+                      <div class="row g-3 mb-4">
+                        <div class="col-12">
+                          <label class="form-label">Full Address <span class="text-danger">*</span></label>
+                          <textarea class="form-control" name="address" rows="3" required
+                            placeholder="Enter complete residential address"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-primary-custom btn-lg">
+                          <i class="fas fa-paper-plane me-2"></i>Submit Application
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+      </div>
+    </section>
+
+    <%- include('partials/footer') %>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/js/main.js"></script>
+</body>
+
+</html>

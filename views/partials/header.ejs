@@ -1,0 +1,56 @@
+<!-- ============================================================
+     header.ejs — Shared Navigation Header
+     Included on every public page
+     ============================================================ -->
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container d-flex justify-content-between flex-wrap">
+    <div>
+      <i class="fas fa-map-marker-alt"></i> Congress Muhalla, Mahnar, Vaishali, Bihar
+      <span class="mx-3">|</span>
+      <i class="fas fa-phone-alt"></i> +91-9801738505
+    </div>
+    <div>
+      <i class="fas fa-envelope"></i> mtpsmahnar844506@gmail.com
+      <span class="mx-3">|</span>
+      <i class="fas fa-clock"></i>9:00 AM to 2:30 PM
+    </div>
+  </div>
+</div>
+
+<!-- Main Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="/images/mother_teresa_icon.png" alt="Mother Teresa Icon" class="brand-img">
+      <div class="brand-text">
+        <span class="main-title">Mother Teresa Public School</span>
+        <span class="sub-title">Congress Mohalla, Mahnar</span>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link <%= page === 'home' ? 'active' : '' %>" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link <%= page === 'about' ? 'active' : '' %>" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link <%= page === 'admissions' ? 'active' : '' %>"
+            href="/admissions">Admissions</a></li>
+        <li class="nav-item"><a class="nav-link <%= page === 'academics' ? 'active' : '' %>"
+            href="/academics">Academics</a></li>
+        <li class="nav-item"><a class="nav-link <%= page === 'faculties' ? 'active' : '' %>"
+            href="/faculties">Teachers</a></li>
+        <li class="nav-item"><a class="nav-link <%= page === 'facilities' ? 'active' : '' %>"
+            href="/facilities">Facilities</a></li>
+        <li class="nav-item"><a class="nav-link <%= page === 'gallery' ? 'active' : '' %>" href="/gallery">Gallery</a>
+        </li>
+        <li class="nav-item"><a class="nav-link <%= page === 'alumni' ? 'active' : '' %>" href="/alumni">Alumni</a></li>
+        <li class="nav-item"><a class="nav-link <%= page === 'notices' ? 'active' : '' %>" href="/notices">Notices</a>
+        </li>
+        <li class="nav-item"><a class="nav-link <%= page === 'contact' ? 'active' : '' %>" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

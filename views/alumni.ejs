@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Meet the successful alumni of Mother Teresa Public School and read their inspiring testimonials.">
+  <title>
+    <%= title %>
+  </title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="/css/style.css" rel="stylesheet">
+  <style>
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 15px 35px rgba(90, 73, 227, 0.1);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-10px) rotateX(5deg) rotateY(3deg);
+      box-shadow: 0 25px 50px rgba(90, 73, 227, 0.2);
+      border-color: var(--primary-light);
+    }
+
+    .testimonial-card::before {
+      content: '\f10d';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 5rem;
+      color: var(--primary);
+      opacity: 0.05;
+    }
+
+    .alumni-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+      border: 5px solid white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .alumni-avatar i {
+      font-size: 3.5rem;
+      color: white;
+    }
+
+    .alumni-info h4 {
+      margin-bottom: 5px;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .alumni-info span {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: #555;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .alumni-hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      padding: 100px 0;
+      color: white;
+      text-align: center;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+
+    .alumni-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .alumni-hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <%- include('partials/header') %>
+
+    <!-- ===== ALUMNI HERO ===== -->
+    <section class="alumni-hero">
+      <div class="container animate-on-scroll">
+        <h1><i class="fas fa-user-graduate me-3"></i>Our Alumni</h1>
+        <div class="section-divider" style="background: white;"></div>
+        <p>Celebrating the achievements and memories of our former students who continue to shine in their respective
+          fields across the globe.</p>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Inspirational Stories</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Hear from our alumni about their journey at MTPS</p>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Amit Raj's Testimonial -->
+          <div class="col-lg-8 animate-on-scroll">
+            <div class="testimonial-card">
+              <div class="row align-items-center">
+
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                  <div class="alumni-avatar mx-auto">
+                    <img src="/images/amit.png" alt="Amit Raj" class="img-fluid rounded-circle">
+                  </div>
+                </div>
+
+                <div class="col-md-9">
+                  <div class="alumni-info">
+                    <h4>Amit Raj</h4>
+                    <span>Software Engineer | NIT Bhopal </span>
+                  </div>
+
+                  <div class="testimonial-text">
+                    "I spent ten wonderful years of my life at Mother Teresa Public School, and it truly shaped my
+                    childhood and the person I am today. The school was not just a place for academic learning but a
+                    nurturing environment where values, discipline, and confidence were instilled in us.
+                    <br><br>
+                    The teachers were always supportive and dedicated, guiding us not only in studies but also in life.
+                    Their encouragement helped me develop curiosity, responsibility, and a strong foundation for my
+                    future. The memories of classrooms, school activities, and the guidance of my teachers will always
+                    remain close to my heart.
+                    <br><br>
+                    Mother Teresa Public School will always hold a special place in my life because it gave me the
+                    knowledge, values, and experiences that shaped my journey. I will always remain grateful to my
+                    school and its teachers for everything they have given me."
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Raj Aryan's Testimonial -->
+          <div class="col-lg-8 animate-on-scroll">
+            <div class="testimonial-card">
+              <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                  <div class="alumni-avatar mx-auto">
+                    <img src="/images/Raj.jpeg" alt="Raj" class="img-fluid rounded-circle">
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="alumni-info">
+                    <h4>Raj Aryan</h4>
+                    <span>Engineer at Larsen and Toubro Ltd</span>
+                  </div>
+                  <div class="testimonial-text">
+                    "The experience of attending Mother Teresa Public School has changed my life. My education, morals,
+                    and character were all fostered by the school, which also sowed the seeds for a successful and
+                    fulfilling future."
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Saurav Kumar's Testimonial -->
+          <div class="col-lg-8 animate-on-scroll">
+            <div class="testimonial-card">
+              <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                  <div class="alumni-avatar mx-auto" style="background: linear-gradient(135deg, #2ed573, #7bed9f);">
+                    <i class="fas fa-user-shield"></i>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="alumni-info">
+                    <h4>Saurav Kumar</h4>
+                    <span>Indian Air Force</span>
+                  </div>
+                  <div class="testimonial-text">
+                    "Mother Teresa Public School is not just a place of education, but a place where memories were made
+                    and dreams began.
+                    Feeling proud and grateful to be a part of this school family.
+                    Thank you to all the teachers who believed in us and helped us grow."
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== JOIN ALUMNI NETWORK ===== -->
+    <section class="section section-gray">
+      <div class="container text-center">
+        <h2 class="section-title">Are You an Alumnus?</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">We'd love to stay connected with you. Join our alumni network and share your success
+          stories.</p>
+        <a href="/contact" class="btn btn-primary-custom">
+          <i class="fas fa-paper-plane me-2"></i>Contact Us to Share Your Story
+        </a>
+      </div>
+    </section>
+
+    <%- include('partials/footer') %>
+
+      <!-- Bootstrap 5 JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Custom JS -->
+      <script src="/js/main.js"></script>
+</body>
+
+</html>

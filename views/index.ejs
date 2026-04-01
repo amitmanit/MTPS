@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Mother Teresa Public School, Mahnar - A leading educational institution in Vaishali, Bihar, offering quality education from Nursery to Class 10.">
+  <meta name="keywords" content="Mother Teresa Public School, Mahnar, Vaishali, Bihar, school, education, CBSE">
+  <meta name="author" content="Mother Teresa Public School">
+  <title>
+    <%= title %>
+  </title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <%- include('partials/header') %>
+
+    <!-- ===== HERO CAROUSEL SETTING ===== -->
+    <section class="slider-wrapper" style="position: relative; overflow: hidden; max-height: 50vh;">
+      <div id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3"></button>
+          <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/images/home_slider/1.jpg" class="d-block w-100" style="height: 50vh; object-fit: cover; object-position: top;" alt="MTPS Campus">
+          </div>
+          <div class="carousel-item">
+            <img src="/images/home_slider/2.jpg" class="d-block w-100" style="height: 50vh; object-fit: cover; object-position: center;" alt="MTPS Event">
+          </div>
+          <div class="carousel-item">
+            <img src="/images/home_slider/3.jpg" class="d-block w-100" style="height: 50vh; object-fit: cover; object-position: center;" alt="MTPS Activity">
+          </div>
+          <div class="carousel-item">
+            <img src="/images/home_slider/4.jpg" class="d-block w-100" style="height: 50vh; object-fit: cover; object-position: center;" alt="MTPS Students">
+          </div>
+          <div class="carousel-item">
+            <img src="/images/home_slider/5.jpg" class="d-block w-100" style="height: 50vh; object-fit: cover; object-position: center;" alt="MTPS Life">
+          </div>
+        </div>
+        <!-- Curve overlay matching screenshot style -->
+        <div class="slider-overlay-curve" style="position: absolute; bottom: -2px; left: 0; width: 100%; z-index: 10;">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,42.7C1120,32,1280,32,1360,32L1440,32L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" fill="#f8f9fa"></path>
+          </svg>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: rgba(90, 73, 227, 0.5); padding: 25px; border-radius: 50%;"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: rgba(90, 73, 227, 0.5); padding: 25px; border-radius: 50%;"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== WELCOME SECTION ===== -->
+    <section class="section" style="padding-top: 50px;">
+      <div class="container text-center">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-10">
+            <div class="hero-badge mb-3">
+              <i class="fas fa-star"></i> Excellence in Education Since Establishment
+            </div>
+            <h1 class="hero-title mb-4" style="color: var(--primary-dark);">
+              Welcome to <span>Mother Teresa</span> Public School
+            </h1>
+            <p class="hero-subtitle mb-4 text-muted mx-auto" style="max-width: 700px; font-size: 1.1rem;">
+              Nurturing young minds with quality education, strong moral values, and
+              a holistic approach to learning at Congress Muhalla, Mahnar, Vaishali, Bihar.
+            </p>
+            <div class="hero-buttons justify-content-center mb-5 d-flex gap-3 flex-wrap">
+              <a href="/admissions" class="btn btn-primary-custom">
+                <i class="fas fa-graduation-cap me-2"></i>Apply for Admission
+              </a>
+              <a href="/about" class="btn btn-outline-custom">
+                <i class="fas fa-info-circle me-2"></i>Learn More
+              </a>
+            </div>
+            
+            <div class="row justify-content-center row-cols-2 row-cols-md-4 g-4 mt-2">
+              <div class="col">
+                <div class="hero-stat p-3 rounded border" style="background: white; box-shadow: var(--shadow-sm); transition: var(--transition);">
+                  <span class="hero-stat-number counter d-block mb-1" data-target="500" style="color: var(--primary); font-size: 2rem;">0+</span>
+                  <span class="hero-stat-label fw-bold">Students</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="hero-stat p-3 rounded border" style="background: white; box-shadow: var(--shadow-sm); transition: var(--transition);">
+                  <span class="hero-stat-number counter d-block mb-1" data-target="20" style="color: var(--primary); font-size: 2rem;">0+</span>
+                  <span class="hero-stat-label fw-bold">Teachers</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="hero-stat p-3 rounded border" style="background: white; box-shadow: var(--shadow-sm); transition: var(--transition);">
+                  <span class="hero-stat-number counter d-block mb-1" data-target="20" style="color: var(--primary); font-size: 2rem;">0+</span>
+                  <span class="hero-stat-label fw-bold">Years</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="hero-stat p-3 rounded border" style="background: white; box-shadow: var(--shadow-sm); transition: var(--transition);">
+                  <span class="hero-stat-number counter d-block mb-1" data-target="10" style="color: var(--primary); font-size: 2rem;">0+</span>
+                  <span class="hero-stat-label fw-bold">Awards</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUICK LINKS ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 animate-on-scroll">
+            <a href="/admissions" class="text-decoration-none">
+              <div class="quick-link-card">
+                <i class="fas fa-user-plus"></i>
+                <h5>Admissions</h5>
+                <p>Apply now for the new academic session. Simple online process.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 animate-on-scroll">
+            <a href="/academics" class="text-decoration-none">
+              <div class="quick-link-card">
+                <i class="fas fa-book-open"></i>
+                <h5>Academics</h5>
+                <p>Explore our comprehensive curriculum and teaching methods.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 animate-on-scroll">
+            <a href="/facilities" class="text-decoration-none">
+              <div class="quick-link-card">
+                <i class="fas fa-laptop"></i>
+                <h5>Facilities</h5>
+                <p>Modern infrastructure and learning resources for students.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-6 animate-on-scroll">
+            <a href="/contact" class="text-decoration-none">
+              <div class="quick-link-card">
+                <i class="fas fa-headset"></i>
+                <h5>Contact Us</h5>
+                <p>Get in touch for any queries or visit our school campus.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRINCIPAL'S MESSAGE ===== -->
+    <section class="section section-gray">
+      <div class="container">
+        <h2 class="section-title">Welcome Message</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">A word from our Principal</p>
+
+        <div class="principal-section animate-on-scroll">
+          <div class="row align-items-center">
+            <div class="col-md-3 text-center mb-4 mb-md-0">
+              <div
+                style="width:150px; height:150px; border-radius:50%; background:linear-gradient(135deg, var(--primary), var(--primary-light)); display:flex; align-items:center; justify-content:center; margin:0 auto; box-shadow: var(--shadow-md);">
+                <i class="fas fa-user-tie" style="font-size:4rem; color:var(--white);"></i>
+              </div>
+              <h5 class="mt-3 mb-1" style="font-family:var(--font-heading);">The Principal</h5>
+              <p class="text-muted" style="font-size:0.88rem;">Mother Teresa Public School</p>
+            </div>
+            <div class="col-md-9">
+              <h4 style="color:var(--primary); font-family:var(--font-heading); margin-bottom:15px;">
+                <i class="fas fa-quote-left me-2" style="color:var(--secondary);"></i>
+                Shaping Tomorrow's Leaders Today
+              </h4>
+              <p style="color:#555; line-height:1.9;">
+                Dear Parents and Students, welcome to Mother Teresa Public School. Our school is committed to
+                providing a nurturing environment where every child can discover their unique potential.
+                We believe that education goes beyond textbooks — it is about building character, fostering
+                creativity, and developing a lifelong love for learning.
+              </p>
+              <p style="color:#555; line-height:1.9;">
+                At MTPS, we combine modern teaching methodologies with traditional values to ensure that
+                our students are well-prepared for the challenges of tomorrow. We take pride in our dedicated
+                faculty, state-of-the-art infrastructure, and a supportive community of parents and educators.
+              </p>
+              <p class="mb-0" style="font-style:italic; color:var(--primary); font-weight:500;">
+                "Education is the most powerful weapon which you can use to change the world." — Nelson Mandela
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SCHOOL HIGHLIGHTS ===== -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Why Choose Us?</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">What makes Mother Teresa Public School stand out</p>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="custom-card">
+              <div class="card-body">
+                <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h5>20+ Years Experienced Faculty</h5>
+                <p class="text-muted mb-0">Our teachers are highly qualified with 20+ years of experience, dedicated to
+                  bringing out the best in every student through innovative teaching methods.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="custom-card">
+              <div class="card-body">
+                <div class="card-icon yellow"><i class="fas fa-laptop-code"></i></div>
+                <h5>Smart Classrooms</h5>
+                <p class="text-muted mb-0">Technology-integrated classrooms with digital boards and interactive learning
+                  tools make education engaging and effective.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="custom-card">
+              <div class="card-body">
+                <div class="card-icon red"><i class="fas fa-shield-alt"></i></div>
+                <h5>Safe Environment</h5>
+                <p class="text-muted mb-0">We ensure a safe and secure campus with CCTV surveillance, trained staff, and
+                  strict safety protocols for all students.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="custom-card">
+              <div class="card-body">
+                <div class="card-icon green"><i class="fas fa-trophy"></i></div>
+                <h5>Holistic Development</h5>
+                <p class="text-muted mb-0">Beyond academics, we focus on sports, arts, music, and extracurricular
+                  activities for overall personality development.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="custom-card">
+              <div class="card-body">
+                <div class="card-icon"><i class="fas fa-book-reader"></i></div>
+                <h5>Well-Stocked Library</h5>
+                <p class="text-muted mb-0">A comprehensive library with thousands of books, journals, and digital
+                  resources to support academic and creative pursuits.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="custom-card">
+              <div class="card-body">
+                <div class="card-icon yellow"><i class="fas fa-hands-helping"></i></div>
+                <h5>Value-Based Education</h5>
+                <p class="text-muted mb-0">We instill strong moral values, discipline, and social responsibility in our
+                  students, following the ideals of Mother Teresa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Inspirational Stories</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Hear from our alumni about their journey at MTPS</p>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Amit Raj's Testimonial -->
+          <div class="col-lg-8 animate-on-scroll">
+            <div class="testimonial-card">
+              <div class="row align-items-center">
+
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                  <div class="alumni-avatar mx-auto">
+                    <img src="/images/amit.png" alt="Amit Raj" class="img-fluid rounded-circle">
+                  </div>
+                </div>
+
+                <div class="col-md-9">
+                  <div class="alumni-info">
+                    <h4>Amit Raj</h4>
+                    <span>Software Engineer | NIT Bhopal </span>
+                  </div>
+
+                  <div class="testimonial-text">
+                    "I spent ten wonderful years of my life at Mother Teresa Public School, and it truly shaped my
+                    childhood and the person I am today. The school was not just a place for academic learning but a
+                    nurturing environment where values, discipline, and confidence were instilled in us.
+                    <br><br>
+                    The teachers were always supportive and dedicated, guiding us not only in studies but also in life.
+                    Their encouragement helped me develop curiosity, responsibility, and a strong foundation for my
+                    future. The memories of classrooms, school activities, and the guidance of my teachers will always
+                    remain close to my heart.
+                    <br><br>
+                    Mother Teresa Public School will always hold a special place in my life because it gave me the
+                    knowledge, values, and experiences that shaped my journey. I will always remain grateful to my
+                    school and its teachers for everything they have given me."
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Raj Aryan's Testimonial -->
+          <div class="col-lg-8 animate-on-scroll">
+            <div class="testimonial-card">
+              <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                  <div class="alumni-avatar mx-auto">
+                    <img src="/images/Raj.jpeg" alt="Raj" class="img-fluid rounded-circle">
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="alumni-info">
+                    <h4>Raj Aryan</h4>
+                    <span>Engineer at Larsen and Toubro Ltd</span>
+                  </div>
+                  <div class="testimonial-text">
+                    "The experience of attending Mother Teresa Public School has changed my life. My education, morals,
+                    and character were all fostered by the school, which also sowed the seeds for a successful and
+                    fulfilling future."
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Saurav Kumar's Testimonial -->
+          <div class="col-lg-8 animate-on-scroll">
+            <div class="testimonial-card">
+              <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                  <div class="alumni-avatar mx-auto" style="background: linear-gradient(135deg, #2ed573, #7bed9f);">
+                    <i class="fas fa-user-shield"></i>
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="alumni-info">
+                    <h4>Saurav Kumar</h4>
+                    <span>Indian Air Force</span>
+                  </div>
+                  <div class="testimonial-text">
+                    "Mother Teresa Public School is not just a place of education, but a place where memories were made
+                    and dreams began.
+                    Feeling proud and grateful to be a part of this school family.
+                    Thank you to all the teachers who believed in us and helped us grow."
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LATEST NEWS / NOTICES ===== -->
+    <section class="section section-gray">
+      <div class="container">
+        <h2 class="section-title">Latest News & Notices</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Stay updated with the latest announcements</p>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <% if (notices.length> 0) { %>
+              <% notices.forEach(notice=> { %>
+                <div class="notice-card animate-on-scroll <%= notice.important ? 'important' : '' %>">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h5 class="mb-0" style="font-family:var(--font-heading); font-size:1.05rem;">
+                      <i class="fas fa-bullhorn me-2" style="color:var(--secondary);"></i>
+                      <%= notice.title %>
+                    </h5>
+                    <% if (notice.important) { %>
+                      <span class="notice-badge">Important</span>
+                      <% } %>
+                  </div>
+                  <p class="mb-2 text-muted" style="font-size:0.92rem;">
+                    <%= notice.content.substring(0, 150) %>
+                      <%= notice.content.length> 150 ? '...' : '' %>
+                  </p>
+                  <div class="notice-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    <%= notice.date.toLocaleDateString('en-IN', { day: 'numeric' , month: 'long' , year: 'numeric' }) %>
+                  </div>
+                </div>
+                <% }) %>
+                  <div class="text-center mt-4">
+                    <a href="/notices" class="btn btn-primary-custom">
+                      View All Notices <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                  </div>
+                  <% } else { %>
+                    <div class="text-center py-4">
+                      <i class="fas fa-bell-slash" style="font-size:3rem; color:var(--gray); opacity:0.5;"></i>
+                      <p class="mt-3 text-muted">No notices at the moment. Check back later!</p>
+                    </div>
+                    <% } %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY PREVIEW ===== -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Campus Gallery</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">A glimpse into life at Mother Teresa Public School</p>
+
+        <div class="row g-3">
+          <% if (galleryImages.length> 0) { %>
+            <% galleryImages.forEach(img=> { %>
+              <div class="col-lg-4 col-md-6 animate-on-scroll">
+                <div class="gallery-item">
+                  <img src="<%= img.imageUrl %>" alt="<%= img.title %>" loading="lazy">
+                  <div class="gallery-overlay">
+                    <h6>
+                      <%= img.title %>
+                    </h6>
+                    <small>
+                      <%= img.category %>
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+                <% } else { %>
+                  <!-- Placeholder gallery items when no images in DB -->
+                  <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="gallery-item"
+                      style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); display:flex; align-items:center; justify-content:center;">
+                      <div class="text-center text-white p-3">
+                        <i class="fas fa-school" style="font-size:3rem; opacity:0.8;"></i>
+                        <h6 class="mt-2" style="color:white;">School Building</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="gallery-item"
+                      style="background: linear-gradient(135deg, var(--secondary), var(--secondary-light)); display:flex; align-items:center; justify-content:center;">
+                      <div class="text-center p-3">
+                        <i class="fas fa-users" style="font-size:3rem; color:var(--primary-dark); opacity:0.8;"></i>
+                        <h6 class="mt-2" style="color:var(--primary-dark);">School Activities</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="gallery-item"
+                      style="background: linear-gradient(135deg, var(--success), #2ed573); display:flex; align-items:center; justify-content:center;">
+                      <div class="text-center text-white p-3">
+                        <i class="fas fa-futbol" style="font-size:3rem; opacity:0.8;"></i>
+                        <h6 class="mt-2" style="color:white;">Sports Events</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %>
+        </div>
+        <div class="text-center mt-4">
+          <a href="/gallery" class="btn btn-primary-custom">
+            View Full Gallery <i class="fas fa-images ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="section section-dark">
+      <div class="container text-center">
+        <h2 class="section-title" style="color:var(--white);">Ready to Join Our School Family?</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle" style="max-width:700px;">
+          Give your child the gift of quality education. Admissions are now open for the upcoming academic session.
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="/admissions" class="btn btn-primary-custom btn-lg">
+            <i class="fas fa-graduation-cap me-2"></i>Apply Now
+          </a>
+          <a href="/contact" class="btn btn-outline-custom btn-lg">
+            <i class="fas fa-phone-alt me-2"></i>Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <%- include('partials/footer') %>
+
+      <!-- Bootstrap 5 JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Custom JS -->
+      <script src="/js/main.js"></script>
+</body>
+
+</html>

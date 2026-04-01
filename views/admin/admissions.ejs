@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Admin Sidebar -->
+  <div class="admin-sidebar">
+    <div class="sidebar-brand"><i class="fas fa-school me-2"></i> MTPS Admin</div>
+    <ul class="nav flex-column">
+      <li class="nav-item"><a class="nav-link" href="/admin/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li class="nav-item"><a class="nav-link" href="/admin/notices"><i class="fas fa-bullhorn"></i> Notices</a></li>
+      <li class="nav-item"><a class="nav-link" href="/admin/gallery"><i class="fas fa-images"></i> Gallery</a></li>
+      <li class="nav-item"><a class="nav-link active" href="/admin/admissions"><i class="fas fa-user-graduate"></i> Admissions</a></li>
+      <li class="nav-item"><a class="nav-link" href="/admin/messages"><i class="fas fa-envelope"></i> Messages</a></li>
+      <li class="nav-item mt-3" style="border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">
+        <a class="nav-link" href="/"><i class="fas fa-globe"></i> View Website</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="/admin/logout" style="color:var(--accent) !important;"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="admin-content">
+    <div class="admin-header">
+      <div>
+        <h3 style="font-family:var(--font-heading); margin-bottom:3px;">Manage Admissions</h3>
+        <p class="text-muted mb-0" style="font-size:0.88rem;">Review and manage student admission forms</p>
+      </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="mb-4">
+      <div class="btn-group">
+        <a href="/admin/admissions?status=All" class="btn btn-sm <%= statusFilter === 'All' ? 'btn-primary' : 'btn-outline-primary' %>">All</a>
+        <a href="/admin/admissions?status=Pending" class="btn btn-sm <%= statusFilter === 'Pending' ? 'btn-warning' : 'btn-outline-warning' %>">Pending</a>
+        <a href="/admin/admissions?status=Approved" class="btn btn-sm <%= statusFilter === 'Approved' ? 'btn-success' : 'btn-outline-success' %>">Approved</a>
+        <a href="/admin/admissions?status=Rejected" class="btn btn-sm <%= statusFilter === 'Rejected' ? 'btn-danger' : 'btn-outline-danger' %>">Rejected</a>
+      </div>
+    </div>
+
+    <!-- Admissions Table -->
+    <div class="admin-table">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Class</th>
+              <th>Father</th>
+              <th>Phone</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (admissions.length > 0) { %>
+              <% admissions.forEach(a => { %>
+                <tr>
+                  <td>
+                    <strong><%= a.studentName %></strong>
+                    <br><small class="text-muted"><%= a.gender %> | DOB: <%= a.dateOfBirth.toLocaleDateString('en-IN') %></small>
+                  </td>
+                  <td><%= a.classApplied %></td>
+                  <td><%= a.fatherName %></td>
+                  <td><%= a.phone %></td>
+                  <td><%= a.createdAt.toLocaleDateString('en-IN', {day:'numeric',month:'short',year:'numeric'}) %></td>
+                  <td><span class="status-badge <%= a.status.toLowerCase() %>"><%= a.status %></span></td>
+                  <td>
+                    <div class="dropdown">
+                      <button class="btn btn-sm btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">
+                        <i class="fas fa-cog"></i>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <form action="/admin/admissions/<%= a._id %>/status" method="POST" class="d-inline">
+                            <input type="hidden" name="status" value="Approved">
+                            <button class="dropdown-item text-success"><i class="fas fa-check me-2"></i>Approve</button>
+                          </form>
+                        </li>
+                        <li>
+                          <form action="/admin/admissions/<%= a._id %>/status" method="POST" class="d-inline">
+                            <input type="hidden" name="status" value="Rejected">
+                            <button class="dropdown-item text-danger"><i class="fas fa-times me-2"></i>Reject</button>
+                          </form>
+                        </li>
+                        <li>
+                          <form action="/admin/admissions/<%= a._id %>/status" method="POST" class="d-inline">
+                            <input type="hidden" name="status" value="Pending">
+                            <button class="dropdown-item text-warning"><i class="fas fa-clock me-2"></i>Set Pending</button>
+                          </form>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                          <a href="/admin/admissions/delete/<%= a._id %>" class="dropdown-item text-danger" onclick="return confirm('Delete this admission?')">
+                            <i class="fas fa-trash me-2"></i>Delete
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+              <% }) %>
+            <% } else { %>
+              <tr><td colspan="7" class="text-center text-muted py-4">No admission forms found</td></tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

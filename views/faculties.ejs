@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Meet the dedicated and experienced faculty of Mother Teresa Public School, Mahnar - committed to nurturing every student's potential.">
+  <title>
+    <%= title %>
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1><i class="fas fa-chalkboard-teacher me-3"></i>Our Faculties</h1>
+        <p>Meet the dedicated educators shaping the future of our students</p>
+        <div class="breadcrumb-custom">
+          <a href="/">Home</a> <span>/</span> <span>Our Teachers</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty Intro -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">The Heart of Our School</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">
+          Our faculty members bring decades of experience, passion, and dedication to every classroom.
+          Together, they create an environment where every child can thrive academically and personally.
+        </p>
+
+        <!-- Stats Row -->
+        <div class="row g-4 mb-5">
+          <div class="col-6 col-md-3">
+            <div class="faculty-stat-card animate-on-scroll">
+              <div class="faculty-stat-icon"><i class="fas fa-users"></i></div>
+              <div class="faculty-stat-number">20+</div>
+              <div class="faculty-stat-label">Qualified Teachers</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="faculty-stat-card animate-on-scroll">
+              <div class="faculty-stat-icon yellow"><i class="fas fa-award"></i></div>
+              <div class="faculty-stat-number">25+</div>
+              <div class="faculty-stat-label">Years Avg. Experience</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="faculty-stat-card animate-on-scroll">
+              <div class="faculty-stat-icon green"><i class="fas fa-graduation-cap"></i></div>
+              <div class="faculty-stat-number">100%</div>
+              <div class="faculty-stat-label">Qualified Staff</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="faculty-stat-card animate-on-scroll">
+              <div class="faculty-stat-icon red"><i class="fas fa-star"></i></div>
+              <div class="faculty-stat-number">500+</div>
+              <div class="faculty-stat-label">Students Taught</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty Cards Grid -->
+        <div class="row g-4" id="facultyGrid">
+
+          <!-- Bechu Prasad Sah - Director -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 animate-on-scroll">
+            <div class="faculty-card">
+              <div class="faculty-card-badge director-badge">Director</div>
+              <div class="faculty-img-wrap">
+                <img src="/images/teachers/Bechu prasad sah.jpg" alt="Bechu Prasad Sah"
+                  onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div class=\'faculty-img-placeholder\'><i class=\'fas fa-user-tie\'></i></div>';">
+              </div>
+              <div class="faculty-card-body">
+                <h5 class="faculty-name">Sree Bechu prasad Sah</h5>
+                <p class="faculty-role"><i class="fas fa-briefcase me-1"></i>Director</p>
+                <p class="faculty-subject"><i class="fas fa-book me-1"></i>Hindi Literature (Sahitya Alankar)</p>
+                <div class="faculty-exp-badge">40+ Yrs Experience</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pramod Kumar Ray - Principal -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 animate-on-scroll">
+            <div class="faculty-card">
+              <div class="faculty-card-badge principal-badge">Principal</div>
+              <div class="faculty-img-wrap">
+                <img src="/images/teachers/Pramod kumar ray.jpg" alt="Pramod Kumar Ray"
+                  onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div class=\'faculty-img-placeholder\'><i class=\'fas fa-user-tie\'></i></div>';">
+              </div>
+              <div class="faculty-card-body">
+                <h5 class="faculty-name">Pramod Kumar Ray</h5>
+                <p class="faculty-role"><i class="fas fa-briefcase me-1"></i>Principal</p>
+                <p class="faculty-subject"><i class="fas fa-book me-1"></i>English Literature (Sahityaalankar)</p>
+                <div class="faculty-exp-badge">20+ Yrs Experience</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Anil Sharma - Coordinator -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 animate-on-scroll">
+            <div class="faculty-card">
+              <div class="faculty-card-badge coordinator-badge">Co-ordinator</div>
+              <div class="faculty-img-wrap">
+                <img src="/images/teachers/Anil sharma.jpg" alt="Anil Sharma"
+                  onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div class=\'faculty-img-placeholder\'><i class=\'fas fa-user-cog\'></i></div>';">
+              </div>
+              <div class="faculty-card-body">
+                <h5 class="faculty-name">Anil Kumar Sharma</h5>
+                <p class="faculty-role"><i class="fas fa-briefcase me-1"></i>Co-ordinator</p>
+                <p class="faculty-subject"><i class="fas fa-book me-1"></i>Social Science & Administration</p>
+                <div class="faculty-exp-badge">35+ Yrs Experience</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Purnendu Ranjan Thakur -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 animate-on-scroll">
+            <div class="faculty-card">
+              <div class="faculty-card-badge faculty-badge">Faculty</div>
+              <div class="faculty-img-wrap">
+                <img src="/images/teachers/Purnendu Ranjan Thakur.jpg" alt="Purnendu Ranjan Thakur"
+                  onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div class=\'faculty-img-placeholder\'><i class=\'fas fa-chalkboard-teacher\'></i></div>';">
+              </div>
+              <div class="faculty-card-body">
+                <h5 class="faculty-name">Purnendu Ranjan Thakur</h5>
+                <p class="faculty-role"><i class="fas fa-briefcase me-1"></i>Senior Teacher</p>
+                <p class="faculty-subject"><i class="fas fa-book me-1"></i>Sanskrit & Hindi</p>
+                <div class="faculty-exp-badge">25+ Yrs Experience</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rajnish Kumar Ray -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 animate-on-scroll">
+            <div class="faculty-card">
+              <div class="faculty-card-badge faculty-badge">Faculty</div>
+              <div class="faculty-img-wrap">
+                <img src="/images/teachers/Rajnish Kumar ray.jpg" alt="Rajnish Kumar Ray"
+                  onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div class=\'faculty-img-placeholder\'><i class=\'fas fa-chalkboard-teacher\'></i></div>';">
+              </div>
+              <div class="faculty-card-body">
+                <h5 class="faculty-name">Rajnish Kumar Ray</h5>
+                <p class="faculty-role"><i class="fas fa-briefcase me-1"></i>Teacher</p>
+                <p class="faculty-subject"><i class="fas fa-book me-1"></i>Maths & Science</p>
+                <div class="faculty-exp-badge">15+ Yrs Experience</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shatrudhan Prasad Singh -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 animate-on-scroll">
+            <div class="faculty-card">
+              <div class="faculty-card-badge faculty-badge">Faculty</div>
+              <div class="faculty-img-wrap">
+                <img src="/images/teachers/Shatrudhan prasad singh.jpg" alt="Shatrudhan Prasad Singh"
+                  onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div class=\'faculty-img-placeholder\'><i class=\'fas fa-chalkboard-teacher\'></i></div>';">
+              </div>
+              <div class="faculty-card-body">
+                <h5 class="faculty-name">Shatrudhan Prasad Singh</h5>
+                <p class="faculty-role"><i class="fas fa-briefcase me-1"></i>Teacher</p>
+                <p class="faculty-subject"><i class="fas fa-book me-1"></i>English , General Knowledge,Science</p>
+                <div class="faculty-exp-badge">25+ Yrs Experience</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sanjeet Kumar Patel -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 animate-on-scroll">
+            <div class="faculty-card">
+              <div class="faculty-card-badge faculty-badge">Faculty</div>
+              <div class="faculty-img-wrap">
+                <img src="/images/teachers/sanjeet kumar patel.jpg" alt="Sanjeet Kumar Patel"
+                  onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div class=\'faculty-img-placeholder\'><i class=\'fas fa-chalkboard-teacher\'></i></div>';">
+              </div>
+              <div class="faculty-card-body">
+                <h5 class="faculty-name">Sanjeet Kumar Patel</h5>
+                <p class="faculty-role"><i class="fas fa-briefcase me-1"></i>Teacher</p>
+                <p class="faculty-subject"><i class="fas fa-book me-1"></i>Mathematics .Science & Computer</p>
+                <div class="faculty-exp-badge">22+ Yrs Experience</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shalini Kumari -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 animate-on-scroll">
+            <div class="faculty-card">
+              <div class="faculty-card-badge faculty-badge">Faculty</div>
+              <div class="faculty-img-wrap">
+                <img src="/images/teachers/Shalini kumari.jpg" alt="Shalini Kumari"
+                  onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div class=\'faculty-img-placeholder\'><i class=\'fas fa-chalkboard-teacher\'></i></div>';">
+              </div>
+              <div class="faculty-card-body">
+                <h5 class="faculty-name">Shalini Kumari</h5>
+                <p class="faculty-role"><i class="fas fa-briefcase me-1"></i>Teacher</p>
+                <p class="faculty-subject"><i class="fas fa-book me-1"></i>Expert Faculty for junior classes</p>
+                <div class="faculty-exp-badge">5+ Yrs Experience</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alisha Kumari -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 animate-on-scroll">
+            <div class="faculty-card">
+              <div class="faculty-card-badge faculty-badge">Faculty</div>
+              <div class="faculty-img-wrap">
+                <img src="/images/teachers/Alisha kumari.jpg" alt="Alisha Kumari"
+                  onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div class=\'faculty-img-placeholder\'><i class=\'fas fa-chalkboard-teacher\'></i></div>';">
+              </div>
+              <div class="faculty-card-body">
+                <h5 class="faculty-name">Alisha Kumari</h5>
+                <p class="faculty-role"><i class="fas fa-briefcase me-1"></i>Teacher</p>
+                <p class="faculty-subject"><i class="fas fa-book me-1"></i>Expert Faculty for junior classes</p>
+                <div class="faculty-exp-badge">5+ Yrs Experience</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aasha Devi -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 animate-on-scroll">
+            <div class="faculty-card">
+              <div class="faculty-card-badge faculty-badge">Faculty</div>
+              <div class="faculty-img-wrap">
+                <img src="/images/teachers/Aasha devi.jpg" alt="Aasha Devi"
+                  onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div class=\'faculty-img-placeholder\'><i class=\'fas fa-chalkboard-teacher\'></i></div>';">
+              </div>
+              <div class="faculty-card-body">
+                <h5 class="faculty-name">Aasha Devi</h5>
+                <p class="faculty-role"><i class="fas fa-briefcase me-1"></i>Teacher</p>
+                <p class="faculty-subject"><i class="fas fa-book me-1"></i>Hindi & Moral Science</p>
+                <div class="faculty-exp-badge">20+ Yrs Experience</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Staff Member (unnamed.jpg) -->
+          <div class="col-sm-6 col-lg-4 col-xl-3 animate-on-scroll">
+            <div class="faculty-card">
+              <div class="faculty-card-badge staff-badge">Teacher</div>
+              <div class="faculty-img-wrap">
+                <img src="/images/teachers/unnamed.jpg" alt="Teacher"
+                  onerror="this.onerror=null; this.src=''; this.parentElement.innerHTML='<div class=\'faculty-img-placeholder\'><i class=\'fas fa-user\'></i></div>';">
+              </div>
+              <div class="faculty-card-body">
+                <h5 class="faculty-name">Dharmendra Kumar Dharma</h5>
+                <p class="faculty-role"><i class="fas fa-briefcase me-1"></i></p>
+                <p class="faculty-subject"><i class="fas fa-building me-1"></i>Expert faculty</p>
+                <div class="faculty-exp-badge">Experience: 20+years</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Our Team CTA -->
+    <section class="section section-dark">
+      <div class="container text-center">
+        <h2 class="section-title text-white">Join Our Team</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 30px;">
+          We are always looking for passionate, qualified educators who share our vision of nurturing young minds and
+          building a better tomorrow.
+        </p>
+        <a href="/contact" class="btn-primary-custom" id="joinTeamBtn">
+          <i class="fas fa-envelope me-2"></i>Get in Touch
+        </a>
+      </div>
+    </section>
+
+    <%- include('partials/footer') %>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/js/main.js"></script>
+</body>
+
+</html>

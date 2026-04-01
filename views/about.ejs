@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Learn about Mother Teresa Public School's history, vision, mission, and achievements in education.">
+  <title>
+    <%= title %>
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1><i class="fas fa-info-circle me-3"></i>About Us</h1>
+        <p>Discover the story, vision, and values of Mother Teresa Public School</p>
+        <div class="breadcrumb-custom">
+          <a href="/">Home</a> <span>/</span> <span>About Us</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- School History -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Our Journey</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">A proud history of educating generations</p>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="timeline">
+              <div class="timeline-item animate-on-scroll">
+                <div class="timeline-year">The Beginning</div>
+                <p class="mb-0 text-muted">Mother Teresa Public School was established in Congress Muhalla, Mahnar,
+                  Vaishali, Bihar with a vision to provide quality education to the children of the region. Starting
+                  with just a handful of students, the school began its journey of excellence.</p>
+              </div>
+              <div class="timeline-item animate-on-scroll">
+                <div class="timeline-year">Growth & Development</div>
+                <p class="mb-0 text-muted">Over the years, the school expanded its infrastructure, added new classrooms,
+                  a computer lab, library, and playground. The number of students grew significantly, reflecting the
+                  trust of parents in our institution.</p>
+              </div>
+              <div class="timeline-item animate-on-scroll">
+                <div class="timeline-year">Modern Era</div>
+                <p class="mb-0 text-muted">Today, MTPS stands as one of the leading schools in the Mahnar region,
+                  equipped with smart classrooms, highly qualified faculty with 20+ years of experience, and a
+                  comprehensive curriculum that focuses on
+                  both academic excellence and personality development.</p>
+              </div>
+              <div class="timeline-item animate-on-scroll">
+                <div class="timeline-year">Looking Ahead</div>
+                <p class="mb-0 text-muted">We continue to innovate and improve, integrating technology into education
+                  and preparing our students for a rapidly changing world while keeping our core values intact.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="section section-gray">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6 animate-on-scroll">
+            <div class="custom-card h-100">
+              <div class="card-body p-4">
+                <div class="card-icon"><i class="fas fa-eye"></i></div>
+                <h3 style="font-family:var(--font-heading); color:var(--primary);">Our Vision</h3>
+                <p class="text-muted mb-0" style="line-height:1.9;">
+                  To be a center of educational excellence that inspires students to become
+                  responsible global citizens, critical thinkers, and compassionate individuals.
+                  We envision a school where every child discovers their potential and develops
+                  the skills needed to lead a successful and meaningful life.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 animate-on-scroll">
+            <div class="custom-card h-100">
+              <div class="card-body p-4">
+                <div class="card-icon yellow"><i class="fas fa-bullseye"></i></div>
+                <h3 style="font-family:var(--font-heading); color:var(--primary);">Our Mission</h3>
+                <ul class="text-muted mb-0" style="line-height:2.2;">
+                  <li>Provide quality education accessible to all sections of society</li>
+                  <li>Foster creativity, critical thinking, and problem-solving skills</li>
+                  <li>Develop strong moral values and ethical behavior in students</li>
+                  <li>Create a safe, inclusive, and supportive learning environment</li>
+                  <li>Integrate modern technology with traditional teaching methods</li>
+                  <li>Encourage participation in sports, arts, and community service</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Director's Message -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">निदेशक का संदेश (Director's Message)</h2>
+        <div class="section-divider"></div>
+
+        <div class="principal-section animate-on-scroll">
+          <div class="row align-items-center">
+            <div class="col-md-3 text-center mb-4 mb-md-0">
+              <div
+                style="width:180px; height:180px; border-radius:50%; margin:0 auto; overflow:hidden; box-shadow: var(--shadow-md); background-color: var(--white); border: 4px solid var(--primary-light);">
+                <!-- Replace src with actual uploaded image path like /images/director.jpg if saved -->
+                <img src="/images/director.png" alt="Bechu Prasad Sah"
+                  style="width:100%; height:100%; object-fit:cover; object-position: top;"
+                  onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, var(--primary), var(--primary-light));\'><i class=\'fas fa-user-tie\' style=\'font-size:5rem; color:var(--white);\'></i></div>';" />
+              </div>
+              <h5 class="mt-3 mb-0" style="font-family:var(--font-heading); color:var(--primary);">श्री बेचू प्रसाद साह
+              </h5>
+              <p class="text-muted" style="font-size:0.85rem; font-weight: 600;">निदेशक (40+ Years Experience), साहित्य
+                अलंकार (हिंदी साहित्य)
+              </p>
+            </div>
+            <div class="col-md-9">
+              <p style="color:var(--gray); line-height:1.9; font-size:1.1rem; font-weight: 500;">
+                प्रिय अभिभावकों और प्यारे विद्यार्थियों,
+              </p>
+              <p style="color:var(--gray); line-height:1.9; font-size:1.05rem;">
+                मदर टेरेसा पब्लिक स्कूल में आपका स्वागत है। हमारा विद्यालय एक ऐसा पोषणकारी वातावरण प्रदान करने के लिए
+                प्रतिबद्ध है जहाँ हर बच्चा अपनी अद्वितीय क्षमता की खोज कर सके। शिक्षा का मूल उद्देश्य केवल किताबी ज्ञान
+                तक सीमित नहीं है, बल्कि यह एक ऐसा माध्यम है जो बच्चों के सर्वांगीण विकास और चरित्र निर्माण में सहायक
+                होता है। हमारा सदैव यह प्रयास रहा है कि हम अपने विद्यार्थियों को एक ऐसा सुरक्षित और प्रेरणादायक वातावरण
+                प्रदान करें जहाँ वे न केवल शैक्षणिक श्रेष्ठता प्राप्त करें, बल्कि उच्च नैतिक मूल्यों को भी आत्मसात
+                करें।
+              </p>
+              <p style="color:var(--gray); line-height:1.9; font-size:1.05rem;">
+                <strong>'साहित्य अलंकार'</strong> होने के नाते मेरा स्पष्ट विचार है कि हमारी भाषा और हमारी संस्कृति ही
+                हमारी सच्ची पहचान है। तकनीकी और आधुनिक शिक्षा के इस युग में हमें अपनी जड़ों से जुड़े रहना अत्यंत आवश्यक
+                है। हमारी संस्था का यह संकल्प है कि हम बच्चों को विश्व स्तरीय ज्ञान के साथ-साथ संस्कारवान भी बनाएँ।
+              </p>
+              <p style="color:var(--gray); line-height:1.9; font-size:1.05rem;">
+                मुझे पूर्ण विश्वास है कि हमारे योग्य शिक्षक, समर्पित प्रबंधन और आप सभी अभिभावकों के निरंतर सहयोग से हम
+                मदर टेरेसा पब्लिक स्कूल को शिक्षा के क्षेत्र में नई ऊंचाइयों तक ले जाएंगे। आइए, मिलकर अपने बच्चों के
+                उज्ज्वल और सुरक्षित भविष्य का निर्माण करें।
+              </p>
+              <p class="mb-0 mt-3" style="color:var(--primary); font-weight:600; font-style:italic; font-size:1.1rem;">
+                "शिक्षा जीवन का आधार है, और संस्कार इसका आभूषण।"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Principal's Message -->
+    <section class="section section-gray">
+      <div class="container">
+        <h2 class="section-title">From the Principal's Desk</h2>
+        <div class="section-divider"></div>
+
+        <div class="principal-section animate-on-scroll">
+          <div class="row align-items-center">
+            <div class="col-md-3 text-center mb-4 mb-md-0">
+              <div
+                style="width:180px; height:180px; border-radius:50%; margin:0 auto; overflow:hidden; box-shadow: var(--shadow-md); background-color: var(--white); border: 4px solid var(--primary-light);">
+                <img src="\images\pramod.jpg" alt="Pramod Kumar Rai"
+                  style="width:100%; height:100%; object-fit:cover; object-position: top;"
+                  onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, var(--primary), var(--primary-light));\'><i class=\'fas fa-user-tie\' style=\'font-size:5rem; color:var(--white);\'></i></div>';" />
+              </div>
+              <h5 class="mt-3 mb-0" style="font-family:var(--font-heading); color:var(--primary);">Pramod Kumar Rai</h5>
+              <p class="text-muted" style="font-size:0.85rem; font-weight: 600;">Principal (20+ Years Experience) &
+                Sahityaalankar (English Literature)</p>
+            </div>
+            <div class="col-md-9">
+              <p style="color:var(--gray); line-height:1.9; font-size:1.1rem; font-weight: 500;">
+                Dear Parents and Students,
+              </p>
+              <p style="color:var(--gray); line-height:1.9; font-size:1.05rem;">
+                Welcome to Mother Teresa Public School. Our institution is dedicated to creating an environment where
+                academic excellence and character building go hand in hand. Education is the most powerful tool to
+                change the world, and at MTPS, we strive to build a solid foundation of knowledge, character, and
+                resilience.
+              </p>
+              <p style="color:var(--gray); line-height:1.9; font-size:1.05rem;">
+                As a student of literature, I firmly believe that every child is a unique story waiting to be written.
+                Literature teaches us empathy, broadens our horizons, and connects us to the shared human experience.
+                Similarly, our educational approach aims to nurture not just academic proficiency, but holistic
+                development. We encourage our students to read widely, think critically, and articulate their thoughts
+                with confidence.
+              </p>
+              <p style="color:#555; line-height:1.9; font-size:1.05rem;">
+                Our dedicated faculty ensures that our students are compassionate, socially responsible, and completely
+                ready to face global challenges. I invite you to join our vibrant learning community.
+              </p>
+              <p class="mb-0 mt-3" style="color:var(--primary); font-weight:600; font-style:italic; font-size:1.1rem;">
+                "Education is the kindling of a flame, not the filling of a vessel."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Senior Faculty's Words -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Words from Senior Faculty</h2>
+        <div class="section-divider"></div>
+
+        <div class="principal-section animate-on-scroll">
+          <div class="row align-items-center">
+            <div class="col-md-3 text-center mb-4 mb-md-0">
+              <div
+                style="width:180px; height:180px; border-radius:50%; margin:0 auto; overflow:hidden; box-shadow: var(--shadow-md); background-color: var(--white); border: 4px solid var(--primary-light);">
+                <img src="/images/senior_faculty.jpg" alt="Ranjit Kumar Malakar"
+                  style="width:100%; height:100%; object-fit:cover; object-position: top;"
+                  onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, var(--primary), var(--primary-light));\'><i class=\'fas fa-chalkboard-teacher\' style=\'font-size:5rem; color:var(--white);\'></i></div>';" />
+              </div>
+              <h5 class="mt-3 mb-0" style="font-family:var(--font-heading); color:var(--primary);">Ranjit Kumar Malakar
+              </h5>
+              <p class="text-muted" style="font-size:0.85rem; font-weight: 600;">Senior Faculty (20+ Years Experience),
+                Mother Teresa Public
+                School</p>
+            </div>
+            <div class="col-md-9">
+              <p style="color:#555; line-height:1.9; font-size:1.05rem;">
+                A school is more than just bricks and mortar; it is a thriving community of learners. Having served as a
+                Senior Faculty member at MTPS for over 20 years, I have witnessed the incredible metamorphosis of our
+                students over the
+                years.
+              </p>
+              <p style="color:#555; line-height:1.9; font-size:1.05rem;">
+                Our educational focus remains deeply rooted in experiential learning, where curiosity is celebrated and
+                innovation is consistently nurtured. We strive to create a classroom environment where students feel
+                safe to ask questions, explore new ideas, and make mistakes as part of their learning journey.
+              </p>
+              <p style="color:#555; line-height:1.9; font-size:1.05rem;">
+                We are passionately committed to shaping minds that are not only sharp in intellect but also profoundly
+                rich in human values.
+              </p>
+              <p class="mb-0 mt-3" style="color:var(--primary); font-weight:600; font-style:italic; font-size:1.1rem;">
+                "Teaching is not about answering all the questions, but inspiring the desire to find them."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Co-ordinator's Words -->
+    <section class="section section-gray">
+      <div class="container">
+        <h2 class="section-title">Message from Co-ordinator</h2>
+        <div class="section-divider"></div>
+
+        <div class="principal-section animate-on-scroll">
+          <div class="row align-items-center">
+            <div class="col-md-3 text-center mb-4 mb-md-0">
+              <div
+                style="width:180px; height:180px; border-radius:50%; margin:0 auto; overflow:hidden; box-shadow: var(--shadow-md); background-color: var(--white); border: 4px solid var(--primary-light);">
+                <img src="/images/coordinator.jpg" alt="Anil Kumar Sharma"
+                  style="width:100%; height:100%; object-fit:cover; object-position: top;"
+                  onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, var(--primary), var(--primary-light));\'><i class=\'fas fa-user-cog\' style=\'font-size:5rem; color:var(--white);\'></i></div>';" />
+              </div>
+              <h5 class="mt-3 mb-0" style="font-family:var(--font-heading); color:var(--primary);">Anil Kumar Sharma
+              </h5>
+              <p class="text-muted" style="font-size:0.85rem; font-weight: 600;">Co-ordinator (35+ Years Experience)</p>
+            </div>
+            <div class="col-md-9">
+              <p style="color:var(--gray); line-height:1.9; font-size:1.05rem;">
+                At Mother Teresa Public School, our vision is seamlessly integrated into every aspect of school life. As
+                the Co-ordinator, my primary focus is ensuring that the academic flow, administrative processes, and
+                student welfare function harmoniously together.
+              </p>
+              <p style="color:var(--gray); line-height:1.9; font-size:1.05rem;">
+                We strongly believe that open communication between parents, teachers, and school administration is the
+                cornerstone of a child's success. We ensure that our curriculum is engaging and that a balance is
+                maintained between rigorous academics and invigorating extracurricular activities.
+              </p>
+              <p style="color:var(--gray); line-height:1.9; font-size:1.05rem;">
+                My ongoing commitment is to provide a smooth, supportive, and effective educational framework that
+                empowers both our dedicated teachers to teach at their best and our brilliant students to learn without
+                limits.
+              </p>
+              <p class="mb-0 mt-3" style="color:var(--primary); font-weight:600; font-style:italic; font-size:1.1rem;">
+                "Excellence is never an accident; it is the result of continuous coordination and sincere effort."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="section section-gray">
+      <div class="container">
+        <h2 class="section-title">Our Achievements</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Milestones that make us proud</p>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="achievement-item animate-on-scroll">
+              <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+              <div>
+                <h6 class="mb-1" style="font-family:var(--font-heading);">Academic Excellence Award</h6>
+                <p class="mb-0 text-muted" style="font-size:0.9rem;">Recognized for outstanding academic results and
+                  teaching quality by the district education board.</p>
+              </div>
+            </div>
+            <div class="achievement-item animate-on-scroll">
+              <div class="achievement-icon"><i class="fas fa-medal"></i></div>
+              <div>
+                <h6 class="mb-1" style="font-family:var(--font-heading);">100% Pass Rate</h6>
+                <p class="mb-0 text-muted" style="font-size:0.9rem;">Consistently achieved 100% pass rate in board
+                  examinations with many students scoring distinction.</p>
+              </div>
+            </div>
+            <div class="achievement-item animate-on-scroll">
+              <div class="achievement-icon"><i class="fas fa-running"></i></div>
+              <div>
+                <h6 class="mb-1" style="font-family:var(--font-heading);">District Sports Champions</h6>
+                <p class="mb-0 text-muted" style="font-size:0.9rem;">Our students have won multiple medals in district
+                  and state-level sports competitions.</p>
+              </div>
+            </div>
+            <div class="achievement-item animate-on-scroll">
+              <div class="achievement-icon"><i class="fas fa-paint-brush"></i></div>
+              <div>
+                <h6 class="mb-1" style="font-family:var(--font-heading);">Cultural Event Winners</h6>
+                <p class="mb-0 text-muted" style="font-size:0.9rem;">Regular participation and victories in inter-school
+                  cultural competitions, debates, and science exhibitions.</p>
+              </div>
+            </div>
+            <div class="achievement-item animate-on-scroll">
+              <div class="achievement-icon"><i class="fas fa-heart"></i></div>
+              <div>
+                <h6 class="mb-1" style="font-family:var(--font-heading);">Community Service Award</h6>
+                <p class="mb-0 text-muted" style="font-size:0.9rem;">Recognized for organizing community service
+                  programs, cleanliness drives, and environmental awareness campaigns.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include('partials/footer') %>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/js/main.js"></script>
+</body>
+
+</html>
