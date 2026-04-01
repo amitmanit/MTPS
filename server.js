@@ -69,13 +69,15 @@ app.use((err, req, res, next) => {
 });
 
 // ---- Start Server ----
-app.listen(PORT, () => {
-  console.log(`
-  ╔════════════════════════════════════════════════╗
-  ║   Mother Teresa Public School Website          ║
-  ║   Server running on http://localhost:${PORT}      ║
-  ╚════════════════════════════════════════════════╝
-  `);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`
+    ╔════════════════════════════════════════════════╗
+    ║   Mother Teresa Public School Website          ║
+    ║   Server running on http://localhost:${PORT}      ║
+    ╚════════════════════════════════════════════════╝
+    `);
+  });
+}
 
 module.exports = app;
