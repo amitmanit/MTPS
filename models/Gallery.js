@@ -30,4 +30,9 @@ const gallerySchema = new mongoose.Schema({
   timestamps: true
 });
 
+// Index for fast date-sorted queries on the home page and gallery page
+gallerySchema.index({ date: -1 });
+// Index for fast category-filtered queries
+gallerySchema.index({ category: 1, date: -1 });
+
 module.exports = mongoose.model('Gallery', gallerySchema);

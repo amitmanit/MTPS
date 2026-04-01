@@ -11,9 +11,19 @@ const Gallery = require('../models/Gallery');
 router.get('/', async (req, res) => {
   try {
     // Fetch latest 5 notices and 6 gallery images in parallel
+    // .lean() returns plain JS objects (2-3x faster than full Mongoose docs)
+    // .select() only fetches needed fields to reduce DB payload
     const [notices, galleryImages] = await Promise.all([
-      Notice.find().sort({ date: -1 }).limit(5),
-      Gallery.find().sort({ date: -1 }).limit(6)
+      Notice.find()
+        .sort({ date: -1 })
+        .limit(5)
+        .select('title content important date')
+        .lean(),
+      Gallery.find()
+        .sort({ date: -1 })
+        .limit(6)
+        .select('title imageUrl category')
+        .lean()
     ]);
 
     res.render('index', {
@@ -81,9 +91,15 @@ router.get('/gallery', async (req, res) => {
     const category = req.query.category || 'All';
     let galleryImages;
     if (category === 'All') {
-      galleryImages = await Gallery.find().sort({ date: -1 });
+      galleryImages = await Gallery.find()
+        .sort({ date: -1 })
+        .select('title imageUrl category description')
+        .lean();
     } else {
-      galleryImages = await Gallery.find({ category }).sort({ date: -1 });
+      galleryImages = await Gallery.find({ category })
+        .sort({ date: -1 })
+        .select('title imageUrl category description')
+        .lean();
     }
     res.render('gallery', {
       title: 'Gallery - Mother Teresa Public School',
@@ -105,7 +121,10 @@ router.get('/gallery', async (req, res) => {
 // ---- NOTICE BOARD ----
 router.get('/notices', async (req, res) => {
   try {
-    const notices = await Notice.find().sort({ date: -1 });
+    const notices = await Notice.find()
+      .sort({ date: -1 })
+      .select('title content important date')
+      .lean();
     res.render('notices', {
       title: 'Notice Board - Mother Teresa Public School',
       page: 'notices',
