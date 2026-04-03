@@ -1,12 +1,15 @@
 // ============================================================
-// server.js — Main Application Entry Point
+// server.js — Main Application Entry Point (Production Ready)
 // Mother Teresa Public School Website
 // ============================================================
+
 require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const path = require('path');
+const morgan = require('morgan');
+
 const connectDB = require('./config/db');
 
 // Import route files
@@ -22,6 +25,12 @@ const PORT = process.env.PORT || 3000;
 const clientPromise = connectDB();
 
 // ---- Middleware ----
+
+// Trust proxy (important for deployment on HTTPS platforms)
+app.set('trust proxy', 1);
+
+// Logging middleware
+app.use(morgan('dev'));
 
 // Parse URL-encoded form data and JSON
 app.use(express.urlencoded({ extended: true }));
@@ -45,7 +54,8 @@ app.use(session({
   }),
   cookie: {
     maxAge: 1000 * 60 * 60 * 24, // 24 hours
-    httpOnly: true               // Prevents client-side JS access
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production' // secure cookies in production
   }
 }));
 
@@ -68,16 +78,15 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something went wrong! Please try again later.');
 });
 
-// ---- Start Server ----
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => {
-    console.log(`
-    ╔════════════════════════════════════════════════╗
-    ║   Mother Teresa Public School Website          ║
-    ║   Server running on http://localhost:${PORT}      ║
-    ╚════════════════════════════════════════════════╝
-    `);
-  });
-}
+// ---- Start Server (IMPORTANT FIXED) ----
+app.listen(PORT, () => {
+  console.log(`
+  ╔════════════════════════════════════════════════╗
+  ║   Mother Teresa Public School Website          ║
+  ║   Server running on port ${PORT}               ║
+  ╚════════════════════════════════════════════════╝
+  `);
+});
 
+// Export app (optional for testing)
 module.exports = app;
